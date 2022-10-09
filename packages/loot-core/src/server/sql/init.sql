@@ -25,7 +25,8 @@ CREATE TABLE accounts
     bank TEXT,
     offbudget INTEGER DEFAULT 0,
     closed INTEGER DEFAULT 0,
-    tombstone INTEGER DEFAULT 0);
+    tombstone INTEGER DEFAULT 0,
+    currency TEXT CHECK(currency IN ('HUF', 'EUR', 'USD')) DEFAULT 'HUF');
 
 CREATE TABLE pending_transactions
   (id TEXT PRIMARY KEY,
